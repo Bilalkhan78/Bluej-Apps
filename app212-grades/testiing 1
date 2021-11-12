@@ -1,0 +1,40 @@
+student.print();
+ Student ID: 22027923, Bilal Khan
+Course course1 = new Course("BT1CTG1", "BSc computing");
+student.enrol(course1);
+course1.print();
+
+ Course BT1CTG1: BSc computing
+
+student.printCourse();
+ Student ID: 22027923, Bilal Khan
+
+ Course BT1CTG1: BSc computing
+
+Module co452 = new Module("co452", "programming concepts");
+Module co452 = new Module("CO452", "Programming Concepts");
+course1.addModule(co452);
+ModuleMark BilalMa1 = new ModuleMark(co452);
+student.addMark(BilalMa1);
+student.printTranscript();
+ ------------------------------------
+ App21-02: Exam Board Transcript 2021
+        by student name
+ ------------------------------------
+ Student ID: 22027923, Bilal Khan
+
+ Course BT1CTG1: BSc computing
+
+
+
+ ---- 	 -------------------- 	 ------	 ---- 	 -----
+ Code 	 Module 		Credit	 Mark 	 Grade
+ ---- 	 -------------------- 	 ------	 ---- 	 -----
+
+
+ No Final Course Grade Yet!
+Student student1 = new Student("Bilal Khan", 22027923);
+Course course1 = new Course("BT1CTG1", "BSc Computing");
+Module co452 = new Module("CO452", "Programming Concepts");
+course1.addModule(co452);
+student1.enrol(course1);

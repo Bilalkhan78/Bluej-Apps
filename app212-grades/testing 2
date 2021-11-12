@@ -1,0 +1,52 @@
+student1.printTranscript();
+ ------------------------------------
+ App21-02: Exam Board Transcript 2021
+        by student name
+ ------------------------------------
+ Student ID: 22027923, Bilal Khan
+
+ Course BT1CTG1: BSc Computing
+
+ CO452: 	Programming Concepts
+ CO450: 	BSc
+ CO456: 	Web Development
+ CO454: 	Digital Tech
+
+ ---- 	 -------------------- 	 ------	 ---- 	 -----
+ Code 	 Module 		Credit	 Mark 	 Grade
+ ---- 	 -------------------- 	 ------	 ---- 	 -----
+
+
+ No Final Course Grade Yet!
+Student student1 = new Student("Bilal Khan", 22027923);
+Course course1 = new Course("BT1CTG1", "BSc Computing");
+Module co452 = new Module("CO452", "Programming Concepts");
+Module co450 = new Module("CO450", "BSC");
+Module co456 = new Module("CO456", "Digital Tech");
+Module co456 = new Module("CO456", "Web Development");
+Module co454 = new Module("CO454", "Digital Tech");
+course1.addModule(co452);
+course1.addModule(co450);
+course1.addModule(co456);
+course1.addModule(co454);
+student1.enrol(course1);
+student1.printTranscript();
+ ------------------------------------
+ App21-02: Exam Board Transcript 2021
+        by student name
+ ------------------------------------
+ Student ID: 22027923, Bilal Khan
+
+ Course BT1CTG1: BSc Computing
+
+ CO452: 	Programming Concepts 15 credits
+ CO450: 	BSC 	             15 credits
+ CO456: 	Web Development	     15 credits
+ CO454: 	Digital Tech	     15 credits
+
+ ---- 	 -------------------- 	 ------	 ---- 	 -----
+ Code 	 Module 		Credit	 Mark 	 Grade
+ ---- 	 -------------------- 	 ------	 ---- 	 -----
+
+
+ No Final Course Grade Yet!

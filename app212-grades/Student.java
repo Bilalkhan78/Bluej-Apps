@@ -1,10 +1,11 @@
 import java.util.*;
+import java.util.Random;
 /**
  * The Student class represents a student in a student administration system.
  * It holds the student details relevant in our context.
  * 
  * @author Michael Kölling and David Barnes
- * Modified by Derek Peacock & Nicholas Day
+ * Modified by Bilal Khan
  * @version 2021-08-18
  */
 public class Student
@@ -17,6 +18,10 @@ public class Student
     private Course course;
     // The marks awarded for the modules on the course
     private ArrayList<ModuleMark> marks;
+    //random mark
+    private Random randomMark;
+
+    
     
     /**
      * This constructor creates a new student with a
@@ -24,7 +29,7 @@ public class Student
      */
     public Student()
     {
-        this("Derek", 12345678);
+        this("Bilal Khan", 22027923);
     }
     
     /**
@@ -32,9 +37,9 @@ public class Student
      */
     public Student(String name, int id)
     {
-        this.name = name;
-        this.id = id;
-        
+        this.name = name; 
+        this.id = id; 
+        randomMark = new Random();
         marks = new ArrayList<ModuleMark>();
     }
 
@@ -67,9 +72,15 @@ public class Student
      */
     public void awardTestMarks()
     {
-        
+     int value = 75;
+     for(Module module : course.modules)
+     {
+        ModuleMark mark = new ModuleMark(module);
+        mark.setMark(randomMark.nextInt(100));
+     //value = value - 10;
+        marks.add(mark);
+     }
     }
-    
     /**
      * Return the full name of this student.
      */
@@ -104,9 +115,12 @@ public class Student
     
     private void printModules()
     {
-
+     for(ModuleMark mark: marks)
+     {
+        mark.print();
+        System.out.print("\t " + course.convertToGrade(mark.getValue()));
+     }
     }
-    
     public void printTranscript()
     {
         System.out.println(" ------------------------------------");
@@ -119,10 +133,10 @@ public class Student
         System.out.println();
         System.out.println();
         System.out.println(" ---- \t -------------------- \t ------\t ---- \t -----");
-        System.out.println(" Code \t Module \t\tCredit\t Mark \t Grade");
+        System.out.println(" Code \t Module \t Credit \t Mark \t Grade");
         System.out.println(" ---- \t -------------------- \t ------\t ---- \t -----");
         
-       
+         printModules();
         Grades finalGrade = course.calculateGrade(marks);
         
         System.out.println();
